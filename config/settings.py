@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'src.oauth',
     'src.api_app',
     'src.user_app',
+    'src.news',
 
 ]
 
