@@ -1,7 +1,7 @@
 from rest_framework import viewsets, permissions, exceptions
 from .models import News
 from . import serializers
-from ..base.permissions import IsAuthor
+from ..base.permissions import IsAdminOrAuthor
 from ..base.paginations import CustomPagination
 
 
@@ -9,7 +9,7 @@ class NewsAuthorViewSet(viewsets.ModelViewSet):
     """
     CRUD for News
     """
-    permission_classes = [IsAuthor]
+    permission_classes = [IsAdminOrAuthor]
     serializer_class = serializers.AuthorNewsSerializer
 
     def get_queryset(self):
