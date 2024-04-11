@@ -20,6 +20,7 @@ class AuthorNewsSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     author = UserSerializer()
 
+
     class Meta:
         model = News
         fields = ('id', 'title', 'text', 'author', 'created_at', 'news_comments')
