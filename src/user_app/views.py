@@ -20,12 +20,8 @@ class UserView(viewsets.ModelViewSet):
     Просмотр редактирование данных пользователя.
     """
     serializer_class = serializers.UserSerializer
-    permissions_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
-        return self.request.user
 
     def get_object(self):
-        if not self.request.user.is_authenticated:
-            raise exceptions.PermissionDenied('Authentication credentials were not provided.')
-        return self.get_queryset()
+        return self.request.user
