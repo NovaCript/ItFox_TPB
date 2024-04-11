@@ -1,26 +1,31 @@
 from django.contrib.auth import get_user_model
-from rest_framework import generics, permissions
-from .serializers import UserSerializer
-
+from rest_framework import viewsets, permissions, exceptions
+from . import serializers
 
 User = get_user_model()
 
 
-class UserCreateViewSet(generics.CreateAPIView):
-    model = User
-    permission_classes = ()
-    serializer_class = UserSerializer
+class UserCreate(viewsets.ModelViewSet):
+    """
+    Cоздание пользователя.
+    """
+    serializer_class = serializers.UserSerializer
+    permissions_classes = [permissions.AllowAny]
 
     def perform_create(self, serializer):
-        user = serializer.save()
-        user.set_password(serializer.validated_data['password'])
-        user.save()
+        serializer.save()
 
-
-class UserListViewSet(generics.ListAPIView):
-    model = User
-    permission_classes = ()
-    serializer_class = UserSerializer
+class UserView(viewsets.ModelViewSet):
+    """
+    Просмотр редактирование данных пользователя.
+    """
+    serializer_class = serializers.UserSerializer
+    permissions_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return User.objects.all()
+        return self.request.user
+
+    def get_object(self):
+        if not self.request.user.is_authenticated:
+            raise exceptions.PermissionDenied('Authentication credentials were not provided.')
+        return self.get_queryset()

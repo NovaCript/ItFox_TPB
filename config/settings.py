@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework.authtoken',
+    'drf_yasg',
 
-
+    'src.oauth',
     'src.api_app',
     'src.user_app',
 
@@ -48,6 +50,14 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'user_app.User'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'src.oauth.services.auth_backend.AuthBackend',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,6 +137,18 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+ALGORITHM = 'HS256'
+
+ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
+}

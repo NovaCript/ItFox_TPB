@@ -11,15 +11,11 @@ class User(AbstractBaseUser,PermissionsMixin):
 
     USERNAME_FIELD = 'username'
 
-
-    @property
-    def is_authenticated(self):
-        """
-        Allways returns True
-        :return: True
-        """
-        return True
-
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
+
+
+    @property
+    def is_authenticated(self):
+        return True
