@@ -9,6 +9,6 @@ schema_view = get_schema_view(
         description="Тестовое задание для ItFox на Django Rest Framework",
         contact=openapi.Contact(url="https://github.com/NovaCript"),
     ),
-    public=False,
+    public=True,
     permission_classes=(permissions.AllowAny,),
 )
