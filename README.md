@@ -1,12 +1,10 @@
-><h5> Stack:</h5>DRF<br>pyjwt<br>drf-yasg<br>gunicorn<br>django-cors-headers<br>psycopg2<br>Black
+><h5> Stack:</h5>DRF<br>pyjwt<br>drf-yasg<br>gunicorn<br>django-cors-headers<br>psycopg2<br>[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Тестовое задание на должность Python Backend Developer
 
 <H3>Описание</H3>
 
 Тестовое задание предполагает создание сервера авторизации и новостей с комментариями и лайками на Django с использованием Django Rest Framework.
-
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
 - Кастомная модель пользователя User(AbstractBaseUser,PermissionsMixin).
