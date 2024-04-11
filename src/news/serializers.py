@@ -5,12 +5,19 @@ from ..user_app.serializers import UserSerializer
 
 class AuthorNewsSerializer(serializers.ModelSerializer):
     author_username = serializers.SerializerMethodField()
+
     class Meta:
         model = News
-        fields = ('id', 'title', 'text', 'author_username', 'created_at')
+        fields = (
+            "id",
+            "title",
+            "text",
+            "author_username",
+            "created_at",
+        )
         extra_kwargs = {
-            'author': {'read_only': True},
-            'created_at': {'read_only': True},
+            "author": {"read_only": True},
+            "created_at": {"read_only": True},
         }
 
     def get_author_username(self, obj):
@@ -20,13 +27,19 @@ class AuthorNewsSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     author = UserSerializer()
 
-
     class Meta:
         model = News
-        fields = ('id', 'title', 'text', 'author', 'created_at', 'news_comments')
+        fields = (
+            "id",
+            "title",
+            "text",
+            "author",
+            "created_at",
+            "news_comments",
+        )
         extra_kwargs = {
-            'author': {'read_only': True},
-            'created_at': {'read_only': True},
+            "author": {"read_only": True},
+            "created_at": {"read_only": True},
         }
 
     def get_author_username(self, obj):

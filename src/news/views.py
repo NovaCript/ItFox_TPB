@@ -9,6 +9,7 @@ class NewsAuthorViewSet(viewsets.ModelViewSet):
     """
     CRUD for News
     """
+
     permission_classes = [IsAdminOrAuthor]
     serializer_class = serializers.AuthorNewsSerializer
 
@@ -24,10 +25,12 @@ class NewsAuthorViewSet(viewsets.ModelViewSet):
     def perform_destroy(self, instance):
         instance.delete()
 
+
 class NewsViewSet(viewsets.ModelViewSet):
     """
     All News
     """
+
     queryset = News.objects.all()
     serializer_class = serializers.NewsSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]

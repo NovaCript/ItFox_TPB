@@ -23,23 +23,24 @@ class ComentAuthorView(viewsets.ModelViewSet):
         serializer.save(author=self.request.user)
 
 
-
 class CommentView(viewsets.ModelViewSet):
     """
     Comments News
     """
+
     serializer_class = serializers.CommentSerializer
     permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
     pagination_class = CustomPagination
 
     def get_queryset(self):
-        return Comment.objects.filter(news=self.kwargs.get('pk'))
+        return Comment.objects.filter(news=self.kwargs.get("pk"))
 
     def get_object(self):
-        comment = get_object_or_404(Comment, pk=self.kwargs['comment_pk'])
+        comment = get_object_or_404(Comment, pk=self.kwargs["comment_pk"])
         if comment.news.author != self.request.user:
             raise exceptions.PermissionDenied(
-                'You do not have permission to delete this comment.')
+                "You do not have permission to delete this comment."
+            )
         self.check_object_permissions(self.request, comment)
         return comment
 

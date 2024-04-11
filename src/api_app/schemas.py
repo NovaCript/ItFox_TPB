@@ -5,7 +5,7 @@ from rest_framework import permissions
 schema_view = get_schema_view(
     openapi.Info(
         title="ItFox-News",
-        default_version='v1',
+        default_version="v1",
         description="Тестовое задание для ItFox на Django Rest Framework",
         contact=openapi.Contact(url="https://github.com/NovaCript"),
     ),

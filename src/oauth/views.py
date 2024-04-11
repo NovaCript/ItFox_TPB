@@ -10,12 +10,15 @@ User = get_user_model()
 
 
 class TokenObtainView(views.APIView):
-    @swagger_auto_schema(request_body=TokenObtainSerializer, responses={200: 'Token'})
+    @swagger_auto_schema(request_body=TokenObtainSerializer, responses={200: "Token"})
     def post(self, request):
         try:
-            user = User.objects.get(username=request.data.get('username'))
+            user = User.objects.get(username=request.data.get("username"))
         except User.DoesNotExist:
-            return Response({'error': 'Invalid username or password'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"error": "Invalid username or password"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
 
         token = create_token(user_id=user.id)
         return Response(token, status=status.HTTP_200_OK)
