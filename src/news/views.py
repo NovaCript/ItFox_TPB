@@ -10,7 +10,7 @@ class NewsAuthorViewSet(viewsets.ModelViewSet):
     CRUD for News
     """
     permission_classes = [IsAuthor]
-    serializer_class = serializers.NewsSerializer
+    serializer_class = serializers.AuthorNewsSerializer
 
     def get_queryset(self):
         return News.objects.filter(author=self.request.user)

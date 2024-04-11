@@ -12,4 +12,6 @@ urlpatterns = [
 
     path('news/', include('src.news.urls')),
 
+    path('comments/', include('src.comments.urls')),
+
 ]

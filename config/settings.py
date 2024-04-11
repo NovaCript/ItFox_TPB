@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'src.api_app',
     'src.user_app',
     'src.news',
+    'src.comments',
 
 ]
 
