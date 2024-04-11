@@ -36,14 +36,23 @@ Swagger: Использование Swagger для документирован�
 <h5>Модели:</h5> Users, News, Comments.
 
 <h5>Роуты:</h5> 
+
 - POST auth
+  
 - GET news
+  
 - POST news
+  
 - PUT news
+  
 - DELETE news
+  
 - GET comments
+  
 - POST comments
+  
 - DELETE comments.
+  
 ---
 
 <h2>Установка и запуск (Локально)</h2>
