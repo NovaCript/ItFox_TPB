@@ -18,4 +18,4 @@ class Comment(models.Model):
 
     def __str__(self):
         created_at_str = self.created_at.strftime('%Y-%m-%d %H:%M:%S')
-        return f'ID: {self.id}, Text: {self.text}, Author: {self.author}, Created at: {created_at_str}, News: {self.news}'
+        return f'ID: {self.id}, Author: {self.author}, Created at: {created_at_str}, News: {self.news.title}'
