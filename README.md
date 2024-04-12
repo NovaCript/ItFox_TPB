@@ -42,21 +42,8 @@ Swagger: Использование Swagger для документирован�
 
 <h5>Роуты:</h5> 
 
-- POST auth
-  
-- GET news
-  
-- POST news
-  
-- PUT news
-  
-- DELETE news
-  
-- GET comments
-  
-- POST comments
-  
-- DELETE comments.
+![image](https://github.com/NovaCript/ItFox_TPB/assets/114811823/efe9d993-5c0f-4faf-b63f-3ab49d3e6e62)
+
   
 ---
 
