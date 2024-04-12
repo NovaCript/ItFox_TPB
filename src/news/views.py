@@ -35,3 +35,6 @@ class NewsViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.NewsSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     pagination_class = CustomPagination
+
+    def get_serializer_context(self):
+        return {"request": self.request}

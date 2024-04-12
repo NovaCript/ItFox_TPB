@@ -17,4 +17,5 @@ urlpatterns = [
     path("auth/", include("src.oauth.urls")),
     path("news/", include("src.news.urls")),
     path("comments/", include("src.comments.urls")),
+    path("like/", include("src.likes.urls")),
 ]
