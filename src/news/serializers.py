@@ -26,6 +26,7 @@ class AuthorNewsSerializer(serializers.ModelSerializer):
 
 class NewsSerializer(serializers.ModelSerializer):
     author = UserSerializer()
+    like_count = serializers.SerializerMethodField()
 
     class Meta:
         model = News
@@ -36,6 +37,7 @@ class NewsSerializer(serializers.ModelSerializer):
             "author",
             "created_at",
             "news_comments",
+            "like_count",
         )
         extra_kwargs = {
             "author": {"read_only": True},
@@ -44,3 +46,6 @@ class NewsSerializer(serializers.ModelSerializer):
 
     def get_author_username(self, obj):
         return obj.author.username
+
+    def get_like_count(self, obj):
+        return obj.like_set.count()
