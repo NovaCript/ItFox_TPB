@@ -13,6 +13,7 @@
 
 - CustomUserManager (BaseUserManager)
 
+- Счетчик Like под новостью.
 
 - Авторизация: Кастомный класс для JWT авторизации наследуемый от BaseAuthentication.
 
