@@ -42,7 +42,8 @@ Swagger: Использование Swagger для документирован�
 
 <h5>Роуты:</h5> 
 
-![image](https://github.com/NovaCript/ItFox_TPB/assets/114811823/efe9d993-5c0f-4faf-b63f-3ab49d3e6e62)
+![image](https://github.com/NovaCript/ItFox_TPB/assets/114811823/c767185f-bb0d-48c3-a83f-b59c3df78a05)
+
 
   
 ---
