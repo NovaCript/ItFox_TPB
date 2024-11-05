@@ -1,8 +1,8 @@
 ><h5> Stack:</h5>DRF<br>pyjwt<br>drf-yasg<br>gunicorn<br>django-cors-headers<br>psycopg2<br>
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-
-
+<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" 
+height="32"/></h1>
 
 <H3>Описание</H3>
 
